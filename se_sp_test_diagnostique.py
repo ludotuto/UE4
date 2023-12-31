@@ -1,0 +1,83 @@
+# Copyright 2023 Ludovic Rousseau, Tutorat PSA
+# Distribuée sous licence CC BY-NC-ND 4.0 
+# Attribution-NonCommercial-NoDerivatives 4.0 International  
+# https://creativecommons.org/licenses/by-nc-nd/4.0/
+print("Entre la valeur de k")
+print("k = 1 : échantillon représentatif de la population")
+print("k = 2 : 2echantil°: 1 M et 1 nonM")
+print("k = 3 : 2echantil°+P(M)réel: M et nonM")
+print("k = 4 : 2echantil°:S ; nonS,(S=test positf)")
+print("k = 5 : Si on connaît Se, Sp et P(M)")
+k = int(input("k = "))
+if k == 1:
+    vp = float(input("Nombre de vrais positifs = ")) 
+    vn = float(input("Nombre de vrais négatifs = "))
+    fp = float(input("Nombre de faux positifs = "))
+    fn = float(input("Nombre de faux négatifs = "))
+    se = vp / (vp + fn)
+    sp = vn / (vn + fp)
+    p = (vp + fn) / (vp + fn + fp + vn)
+    vpp = (p * se) / ((p * se) + ((1 - p) * (1 - sp)))
+    vpn = ((1 - p) * sp) / (((1 - p) * sp) + (p * (1 - se)))
+    print("Se =", se * 100, "%")
+    print("Sp =", sp * 100, "%")
+    print("P(M) échantillon =", p * 100, "%") 
+    print("VPP =", vpp * 100, "%")
+    print("VPN =", vpn * 100, "%")
+
+elif k == 2:
+    vp = float(input("Nombre de vrais positifs = ")) 
+    vn = float(input("Nombre de vrais négatifs = "))
+    fp = float(input("Nombre de faux positifs = "))
+    fn = float(input("Nombre de faux négatifs = "))  
+    se = vp / (vp + fn)
+    sp = vn / (vn + fp)
+    p = (vp + fn) / (vp + fn + fp + vn)
+    vpp = (p * se) / ((p * se) + ((1 - p) * (1 - sp)))
+    vpn = ((1 - p) * sp) / (((1 - p) * sp) + (p * (1 - se)))
+    print("Se =", se * 100, "%")
+    print("Sp =", sp * 100, "%")
+    print("P(M) observé =", p * 100, "%")
+    print("VPP et VPN réels ne sont pas calculables")
+    print("VPP et VPN observés:")
+    print("Fausse VPP =", vpp * 100, "%")
+    print("Fausse VPN =", vpn * 100, "%")
+
+elif k == 3:
+    vp = float(input("Nombre de vrais positifs = ")) 
+    vn = float(input("Nombre de vrais négatifs = "))
+    fp = float(input("Nombre de faux positifs = "))
+    fn = float(input("Nombre de faux négatifs = "))  
+    p = float(input("Prévalence = P(M) = ")) 
+    se = vp / (vp + fn)
+    sp = vn / (vn + fp)
+    vpp = (p * se) / ((p * se) + ((1 - p) * (1 - sp)))
+    vpn = ((1 - p) * sp) / (((1 - p) * sp) + (p * (1 - se)))
+    print("Se =", se * 100, "%")
+    print("Sp =", sp * 100, "%")
+    print("Avec P(M) réelle dans la population =", p * 100, "%") 
+    print("VPP =", vpp * 100, "%")
+    print("VPN =", vpn * 100, "%")
+
+elif k == 4:
+    vp = float(input("Nombre de vrais positifs = ")) 
+    vn = float(input("Nombre de vrais négatifs = "))
+    fp = float(input("Nombre de faux positifs = "))
+    fn = float(input("Nombre de faux négatifs = ")) 
+    vpp = vp / (vp + fp)
+    vpn = vn / (vn + fn)
+    print("VPP =", vpp * 100, "%")
+    print("VPN =", vpn * 100, "%")
+    print("Se et Sp ne sont pas calculables")
+
+elif k == 5:
+    se = float(input("Sensibilité du Test = "))
+    sp = float(input("Spécificité du Test = "))
+    p = float(input("Prévalence = "))
+    vpp = p * se / (p * se + (1 - p) * (1 - sp))
+    vpn = (1 - p) * sp / ((1 - p) * sp + p * (1 - se))
+    print("VPP =", vpp * 100, "%")
+    print("VPN =", vpn * 100, "%")
+
+else:
+    print("Erreur : valeur de k incorrecte")

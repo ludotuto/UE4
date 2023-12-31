@@ -1,0 +1,60 @@
+# Copyright 2023 Ludovic Rousseau, Tutorat PSA
+# Distribuée sous licence CC BY-NC-ND 4.0 
+# Attribution-NonCommercial-NoDerivatives 4.0 International  
+# https://creativecommons.org/licenses/by-nc-nd/4.0/
+from math import *
+
+k=int(input("nombre d'échantillons (4max) = "))
+if k==2:
+  m1=float(input("Echantillon 1: Moyenne= "))
+  s1=float(input("Echantillon 1: Écart-type= "))
+  n1=float(input("Echantillon 1: Taille= "))
+  m2=float(input("Echantillon 2: Moyenne= "))
+  s2=float(input("Echantillon 2: Écart-type= "))
+  n2=float(input("Echantillon 2: Taille= "))
+  v=1/(n1+n2-1)*((n1-1)*s1**2+n1*m1**2+(n2-1)*s2**2+n2*m2**2-(n1+n2)*((n1*m1+n2*m2)/(n1+n2))**2)
+  sm=sqrt(v)
+  print("s moyen= ")
+  print(sm)
+  print("")
+  print("Var moyenne= ")
+  print(v)
+  
+elif k==3:
+  m1=float(input("Echantillon 1: Moyenne= "))
+  s1=float(input("Echantillon 1: Écart-type= "))
+  n1=float(input("Echantillon 1: Taille= "))
+  m2=float(input("Echantillon 2: Moyenne= "))
+  s2=float(input("Echantillon 2: Écart-type= "))
+  n2=float(input("Echantillon 2: Taille= "))
+  m3=float(input("Echantillon 1: Moyenne= "))
+  s3=float(input("Echantillon 1: Écart-type= "))
+  n3=float(input("Echantillon 1: Taille= "))
+  v=1/(n1+n3+n2-1)*((n1-1)*s1**2+n1*m1**2+(n2-1)*s2**2+n2*m2**2+(n3-1)*s3**2+n3*m3**2-(n1+n2+n3)*((n1*m1+n2*m2+n3*m3)/(n1+n2+n3))**2)
+  sm=sqrt(v)
+  print("s moyen= ")
+  print(sm)
+  print("")
+  print("Var moyenne= ")
+  print(v)
+
+elif k==4:
+  m1=float(input("Echantillon 1: Moyenne= "))
+  s1=float(input("Echantillon 1: Écart-type= "))
+  n1=float(input("Echantillon 1: Taille= "))
+  m2=float(input("Echantillon 2: Moyenne= "))
+  s2=float(input("Echantillon 2: Écart-type= "))
+  n2=float(input("Echantillon 2: Taille= "))
+  m3=float(input("Echantillon 1: Moyenne= "))
+  s3=float(input("Echantillon 1: Écart-type= "))
+  n3=float(input("Echantillon 1: Taille= "))
+  m4=float(input("Echantillon 1: Moyenne= "))
+  s4=float(input("Echantillon 1: Écart-type= "))
+  n4=float(input("Echantillon 1: Taille= "))
+  v=1/(n1+n3+n2+n4-1)*((n1-1)*s1**2+n1*m1**2+(n2-1)*s2**2+n2*m2**2+(n3-1)*s3**2+n3*m3**2+(n4-1)*s4**2+n4*m4**2-(n1+n2+n3+n4)*((n1*m1+n2*m2+n3*m3+n4*m4)/(n1+n2+n3+n4))**2)
+  sm=sqrt(v)
+  print("s moyen= ")
+  print(sm)
+  print("")
+  print("Var moyenne= ")
+  print(v)
