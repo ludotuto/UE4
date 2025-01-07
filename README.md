@@ -1,7 +1,7 @@
 # UE4
 Programmes  UE 4 pour le tutorat  PASS/LAS Sorbonne Université 
 
-Copyright 2023 Ludovic Rousseau, Tutorat PSA
+Copyright 2023 - 2025 Ludovic Rousseau, Tutorat Santé Sobonne Université (ex Tutorat PSA)
 
 Distribuée sous licence CC BY-NC-ND 4.0 
 
